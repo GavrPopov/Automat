@@ -13,7 +13,7 @@ click=driver.find_element(By.CSS_SELECTOR, Add_Element)
 # Три раза кликнуть по синей кнопке
 for n in range(3):
     click.click()
-    a = driver.swich_to.alert.accept()
+    driver.swich_to.alert.accept()
     sleep(1)
 
 sleep(5)
@@ -29,7 +29,7 @@ driver.find_element(By.CSS_SELECTOR, 'button.btn')
 # Три раза кликнуть по синей кнопке
 for n in range(3):
     click.click()
-    a = driver.swich_to.alert.accept()
+    driver.swich_to.alert.accept()
     sleep(1)
 
 sleep(5)
