@@ -11,9 +11,10 @@ driver.get("http://the-internet.herokuapp.com/add_remove_elements/")
 Add_Element = "//button[contains(text(),'Add Element')]"
 button = driver.find_element(By.XPATH, Add_Element)
 # Кликнуть на кнопку Add Element 5 раз
-from n in range(5)
-button.click()
-sleep(1)
+for n in range(5):
+    button.click()
+    sleep(1)
+    
 sleep(5)
 driver.quit()
 
@@ -35,9 +36,9 @@ Add_Element = "//button[contains(text(), 'Add Element')]"
 button = driver.find_element(By.XPATH, Add_Element)
 
 # Кликнуть на кнопку Add Element 5 раз
-from n in range(5)
-button.click()
-sleep(1)
+for n in range(5):
+    button.click()
+    sleep(1)
 
 sleep(5)
 driver.quit()
