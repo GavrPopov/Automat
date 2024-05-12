@@ -4,10 +4,10 @@ from time import sleep
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
-
-driver = webdriver.Chrome()
 import requests
 from bs4 import BeautifulSoup
+
+driver = webdriver.Chrome()
 
 url = "http://uitestingplayground.com/ajax"
 response = requests.get(url)
