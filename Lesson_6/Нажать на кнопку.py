@@ -1,30 +1,17 @@
-# открыть страницу в Хром
 from selenium import webdriver
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
 from time import sleep
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
-from webdriver_manager.chrome import ChromeDriverManager
 
 driver = webdriver.Chrome()
-import requests
-from bs4 import BeautifulSoup
 
-url = "http://uitestingplayground.com/ajax"
-response = requests.get(url)
+wait = WebDriverWait(driver, 20)
+driver.get('http://uitestingplayground.com/ajax')
+driver.find_element(By.CSS_SELECTOR, "#ajaxButton").click()
+text = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "p.bg-success"))).text
 
-# Проверяем статус код ответа
-if response.status_code == 200:
-    # Нажимаем на кнопку и получаем текст из зеленой плашки
-    data = {
-        "ajaxButton": "true"
-    }
-    response = requests.post(url, data=data)
-    
-    # Парсим HTML страницу для извлечения текста из зеленой плашки
-    soup = BeautifulSoup(response.text, 'html.parser')
-    green_box_text = soup.find('div', class_='bg-success').get_text()
+sleep(2)
+print(text)
 
-    # Выводим текст в консоль
-    print(green_box_text)
-else:
-    print("Failed to fetch the page")
