@@ -1,26 +1,16 @@
-# открыть страницу в Хром
 from selenium import webdriver
+from selenium.webdriver.support.wait import WebDriverWait
 from time import sleep
 from selenium.webdriver.chrome.service import Service as ChromeService
-from webdriver_manager.chrome import ChromeDriverManager
-import time
+from selenium.webdriver.common.by import By
 
-# Открываем браузер и переходим на страницу
 driver = webdriver.Chrome()
-driver.get("http://uitestingplayground.com/textinput")
+wait = WebDriverWait(driver, 10)
 
-# Находим поле ввода, вводим текст и нажимаем на кнопку
-input_field = driver.find.element.by.id("textinput")
-input_field.send_keys("SkyPro")
-button = driver.find.element.by.id("textinput_button")
-button.click()
+driver.get('http://uitestingplayground.com/textinput')
+driver.find_element(By.CSS_SELECTOR, "#newButtonName").send_keys("SkyPro")
+driver.find_element(By.CSS_SELECTOR, '#updatingButton').click()
+button = driver.find_element(By.CSS_SELECTOR, '#updatingButton').text
 
-# Ждем немного, чтобы страница обновилась
-time.sleep(2)
-
-# Получаем текст кнопки и выводим в консоль
-button_text = button.text
-print(button_text)
-
-# Закрываем браузер
-driver.quit()
+sleep(2)
+print(button)
