@@ -8,7 +8,7 @@ def driver():
     yield driver
     driver.quit()
 
-def test_fill_form(driver):
+def fill_form_test(driver):
     form_page = FormPage(driver)
     form_page.open("https://bonigarcia.dev/selenium-webdriver-java/data-types.html")
     form_page.fill_form("Иван", "Петров", "Ленина, 55-3", "test@skypro.com", "+7985899998787", "", "Москва", "Россия", "QA", "SkyPro")

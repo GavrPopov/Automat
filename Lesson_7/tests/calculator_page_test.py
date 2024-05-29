@@ -1,7 +1,7 @@
 import pytest
 import time
 from selenium import webdriver
-from pages import CalculatorPage
+from pages.calculator_page import CalculatorPage
 
 @pytest.fixture
 def driver():
@@ -9,7 +9,7 @@ def driver():
     yield driver
     driver.quit()
 
-def test_calculator(driver):
+def calculator_test(driver):
     calculator_page = CalculatorPage(driver)
     calculator_page.open("https://bonigarcia.dev/selenium-webdriver-java/slow-calculator.html")
     calculator_page.enter_delay("45")

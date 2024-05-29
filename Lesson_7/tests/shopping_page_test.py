@@ -1,6 +1,6 @@
 import pytest
 from selenium import webdriver
-from pages import LoginPage, ProductsPage, CartPage, CheckoutPage
+from pages.shopping_page import LoginPage, ProductsPage, CartPage, CheckoutPage
 
 @pytest.fixture
 def driver():
