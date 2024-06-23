@@ -19,7 +19,7 @@ def test_search_invalid_ui():
         browser = webdriver.Chrome()
         main_page = MainPage(browser) 
         main_page.set_cookie_policy()
-        text = main_page.search_invalid_ui('✉ § © ☯ ☭ ? $ £ ¢')
+        text = main_page.search_invalid_ui('✉ § © ☯ ☭ ? $ £ *')
         assert text [0:30] == "Похоже, у нас такого нет"
 
 @allure.title("Пустая корзина")
