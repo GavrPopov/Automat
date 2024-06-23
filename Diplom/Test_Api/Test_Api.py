@@ -28,7 +28,7 @@ def test_get_books():
 @pytest.mark.positive_test
 
 def test_get_book_by_id():
-    book_id = id   
+    book_id = "master-i-margarita-3018590"   
     headers = {
         'content-type': 'application/json',
         'authorization': f'Bearer {TOKEN}'
@@ -36,7 +36,7 @@ def test_get_book_by_id():
 
     response = requests.get(f"https://{Site_URL}/products/slug/{book_id}", headers=headers)
     assert response.status_code == 200, f"Ожидался статус-код 200, но получен {response.status_code}"
-    assert "Роулинг Джоан Кэтлин" in response.text
+    assert "Булгаков" in response.text
     
 @allure.feature("API")
 @allure.story("Поиск книг на кириллице")
