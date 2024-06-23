@@ -5,7 +5,7 @@ import unittest
 from Diplom.Config import Site_URL
 from Diplom.Config import Site_URL_2
 from Diplom.Config import TOKEN
-from Diplom.Config import id
+
 
 @allure.feature("API")
 @allure.story("Получение списка книг")
@@ -28,7 +28,7 @@ def test_get_books():
 @pytest.mark.positive_test
 
 def test_get_book_by_id():
-    book_id = id   
+    book_id = "master-i-margarita-3018590"   
     headers = {
         'content-type': 'application/json',
         'authorization': f'Bearer {TOKEN}'
@@ -36,7 +36,7 @@ def test_get_book_by_id():
 
     response = requests.get(f"https://{Site_URL}/products/slug/{book_id}", headers=headers)
     assert response.status_code == 200, f"Ожидался статус-код 200, но получен {response.status_code}"
-    assert "harry potter and-the philosophers stone" in response.text
+    assert "Булгаков" in response.text
     
 @allure.feature("API")
 @allure.story("Поиск книг на кириллице")
@@ -61,7 +61,7 @@ def test_search_books_eng():
         'authorization': f'Bearer {TOKEN}'
     }
 
-    response = requests.get(f"https://{Site_URL_2}/search/product?phrase=harry-potter and the philosophers stone", headers=headers)
+    response = requests.get(f"https://{Site_URL_2}/search/product?phrase=harry potter and the philosophers stone", headers=headers)
     assert response.status_code == 200, f"Ожидался статус-код 200, но получен {response.status_code}"
 
 @allure.feature("API")
