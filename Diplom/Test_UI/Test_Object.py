@@ -45,6 +45,6 @@ def test_search_book_eng_ui():
         browser = webdriver.Chrome()
         main_page = MainPage(browser) 
         main_page.set_cookie_policy()
-        text = main_page.search_book_eng_ui('harry potter and the philosophers stone')
-        assert text [0:53] == "Показываем результаты по запросу «harry potter and the philosophers stone»"
+        text = main_page.search_book_eng_ui('Master i Margarita')
+        assert text [0:53] == "Показываем результаты по запросу «master i margarita»"
 
