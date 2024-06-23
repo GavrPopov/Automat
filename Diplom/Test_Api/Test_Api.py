@@ -5,7 +5,7 @@ import unittest
 from Diplom.Config import Site_URL
 from Diplom.Config import Site_URL_2
 from Diplom.Config import TOKEN
-from Diplom.Config import id
+
 
 @allure.feature("API")
 @allure.story("Получение списка книг")
