@@ -36,7 +36,7 @@ def test_get_book_by_id():
 
     response = requests.get(f"https://{Site_URL}/products/slug/{book_id}", headers=headers)
     assert response.status_code == 200, f"Ожидался статус-код 200, но получен {response.status_code}"
-    assert "Роулинг Джоан Кэтлин" in response.text
+    assert "harry potter and-the philosophers stone" in response.text
     
 @allure.feature("API")
 @allure.story("Поиск книг на кириллице")

@@ -31,7 +31,7 @@ def test_search_book_rus_ui():
         main_page = MainPage(browser) 
         main_page.set_cookie_policy()
         text = main_page.search_book_rus_ui('Гарри Поттер и философский камень')
-        assert text [0:45] == "Показываем результаты по запросу «Гарри Поттер и философский камень»"
+        assert text [0:53] == "Показываем результаты по запросу «Гарри Поттер и философский камень»"
 
 @allure.title("Поиск книги на латинице")
 @allure.description("Проверка получения книг на латинице")
@@ -45,5 +45,5 @@ def test_search_book_eng_ui():
         main_page = MainPage(browser) 
         main_page.set_cookie_policy()
         text = main_page.search_book_eng_ui('Harry Potter and the Philosophers Stone')
-        assert text [0:45] == "Показываем результаты по запросу «Harry Potter and the Philosophers Stone»"
+        assert text [0:53] == "Показываем результаты по запросу «Harry Potter and the Philosophers Stone»"
 
