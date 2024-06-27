@@ -15,7 +15,7 @@ def test_search_unicode_symbols():
         'authorization': f'Bearer {TOKEN}'
     }
 
-    response = requests.get(f"https://{Site_URL_2}/search/product?phrase=✉ § © ☯ ☭ ? $ £ ¢", headers=headers)
+    response = requests.get(f"https://{Site_URL_2}/search/product?phrase=✉ § © ☯ ☭ ? $ £ *", headers=headers)
     assert response.status_code == 422, f"Ожидался статус-код 422, но получен {response.status_code}"
 
 @allure.feature("API")
