@@ -88,7 +88,7 @@ def test_get_info_new_employers_missing_employer_id():
         employer.get_info()
     except TypeError as e:
         assert str(
-            e) == "Employer.get_list() missing 1 required positional argument: 'employee_id'"
+            e) == "Employer.get_info() missing 1 required positional argument: 'employee_id'"
         
 def test_change_employer_info(get_token):
     token = str(get_token)
