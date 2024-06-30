@@ -8,7 +8,6 @@ from Lesson_10.HW7.Pages.Buying import BuyingPage
 @allure.description("Тест сравнивает сумму добавленных в корзину товаров с конкретным значением")
 @allure.feature("CREATE")
 @allure.severity("blocker")
-
 def test_buying_process():
     with allure.step("Запуск браузера Chrome"):
         browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
